@@ -1,4 +1,5 @@
 **Project Description**
+
 This web app is a site for the Marketing Agency, Horiseon.
 The company, which specializes in Search Engine Optimization, Online Reputation Management, and Social Media Marketing needed an updated website that met accessibility standards.
 
