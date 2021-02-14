@@ -4,6 +4,7 @@
     margin: 0;
 }
 
+/*Variables for commonly used colors, fonts, and margins*/
 :root{
     --white: #ffffff;
     --seo-emphasis: #d9dcd6;
@@ -13,7 +14,7 @@
     --head-foot-font: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/*basic formatting for body and headings*/
+/*Basic formatting for body and headings*/
 body {
     background-color: #d9dcd6;
     font-size: 16px;    
@@ -38,7 +39,7 @@ h4 {
     font-size: 20px;
 }
 
-/*Formatting for the header and navbar*/
+/*Formatting for the header bar*/
 header {
     padding: 20px;
     font-family: var(--head-foot-font);
@@ -46,11 +47,13 @@ header {
     color: var(--white);
 }
 
+/*Emphasis on "seo" of Horiseon*/
 em {
     color: #d9dcd6;
     font-style:normal;
 }
 
+/*Right-justified nav bar*/
 nav {
     padding-top: 15px;
     margin-right: var(--content-margin);
@@ -59,37 +62,37 @@ nav {
     float: right;
 }
 
+nav ul li{
+    list-style: none;
+    display: inline;
+}
 nav a{
     margin-left: var(--img-margin);
     color: var(--white);
     text-decoration: none;
 }
 
+.collapse{
+    display:none;
+}
+
+/*Heading photo size adjustment*/
 .head-img {
     width: 100%;
     margin-bottom: var(--img-margin);
 }
 
-.float-left {
-    float: left;
-    margin-right: var(--img-margin);
-}
-
-.float-right {
-    float: right;
-    margin-left: var(--img-margin);
-}
-
+/*Article content and block formatting*/
 .content {
     width: 75%;
-    display: inline-block;
+    display: inline-flex;
+    flex-flow: column nowrap;
     margin-left: var(--content-margin);
 }
 
 .content-block{
     margin-bottom: var(--content-margin);
     padding: 50px;
-    height: 300px;
     font-family: var(--content-font);
     background-color: #0072bb;
     color: var(--white);
@@ -98,6 +101,16 @@ nav a{
 
 .content-block img {
     max-height: 200px;
+}
+/*Article photo float location*/
+.float-left {
+    float: left;
+    margin-right: var(--img-margin);
+}
+
+.float-right {
+    float: right;
+    margin-left: var(--img-margin);
 }
 
 /*Formatting for the right-side aside block*/
@@ -129,4 +142,45 @@ footer {
     clear: both;
     font-family: var(--head-foot-font);
     text-align: center;
+}
+
+/*Desktop display narrower than nav list items*/
+@media screen and (max-width: 1030px){
+    .list { 
+        display:none;
+    }
+    .collapse{
+        display: block;
+        float: right;
+        margin:var(--content-margin);
+    }
+}
+
+/*Tablet width and smaller sets the aside at the bottom and fixes article widths*/
+@media screen and (max-width: 992px){
+    .benefits{
+        clear:both;
+        overflow:auto;
+        float: left;
+        display: flex;
+        flex-flow: row wrap;
+        width: auto;
+        padding: 20px;
+        margin:var(--content-margin);
+        margin-top: 0;
+    }
+    .benefits article img{
+        display:none;
+    }
+    .benefits article h3{
+        text-align:left;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+
+    .content{
+        width: auto;
+        margin:var(--content-margin);
+        margin-bottom: 0;
+    }
 }
